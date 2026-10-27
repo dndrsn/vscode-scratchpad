@@ -1,0 +1,4 @@
+{
+  "scopeName": "text.scratchpad",
+  "patterns": [{ "include": "text.html.markdown" }]
+}

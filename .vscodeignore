@@ -1,0 +1,5 @@
+.claude/**
+.scratch/**
+*.vsix
+.gitignore
+pnpm-lock.yaml

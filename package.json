@@ -1,0 +1,68 @@
+{
+  "name": "scratchpad",
+  "displayName": "Scratchpad",
+  "description": "A per-workspace scratchpad that autosaves and stays out of the repo.",
+  "version": "0.0.1",
+  "publisher": "dndrsn",
+  "license": "MIT",
+  "repository": "https://github.com/dndrsn/vscode-scratchpad",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onFileSystem:scratchpad"
+  ],
+  "scripts": {
+    "package": "vsce package --no-dependencies"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "scratchpad.open",
+        "title": "Scratchpad: Open"
+      }
+    ],
+    "languages": [
+      {
+        "id": "scratchpad",
+        "aliases": [
+          "Scratchpad"
+        ],
+        "extensions": [
+          ".scratchpad"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "scratchpad",
+        "scopeName": "text.scratchpad",
+        "path": "./syntaxes/scratchpad.tmLanguage.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[scratchpad]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.quickSuggestions": {
+          "comments": "off",
+          "strings": "off",
+          "other": "off"
+        },
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "editor.wordWrap": "on",
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 200,
+        "files.autoSaveWhenNoErrors": false,
+        "files.autoSaveWorkspaceFilesOnly": false,
+        "files.insertFinalNewline": false,
+        "files.trimFinalNewlines": false,
+        "files.trimTrailingWhitespace": false
+      }
+    }
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^4.0.0"
+  }
+}
